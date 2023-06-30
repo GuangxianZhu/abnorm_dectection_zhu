@@ -1,0 +1,83 @@
+DRD:
+  [
+    {
+      "name": "alg",
+      "type": "fixed",
+      "domain": "DictionaryReconstructDetector",
+    },
+    {
+      "name": "license_path",
+      "type": "fixed",
+      "domain": "license/node-locked.lic",
+    },
+    { "name": "patch_size_height", "type": "discrete", "domain": [4, 32] },
+    { "name": "patch_size_width", "type": "discrete", "domain": [4, 32] },
+    { "name": "extraction_step_height", "type": "discrete", "domain": [2, 16] },
+    { "name": "extraction_step_width", "type": "discrete", "domain": [2, 16] },
+    { "name": "deviation_step", "type": "continuous", "domain": [0.1, 3.0] },
+    { "name": "n_components", "type": "discrete", "domain": [2, 20] },
+    { "name": "max_iter", "type": "discrete", "domain": [10, 100] },
+    { "name": "n_nonzero_coefs", "type": "discrete", "domain": [2, 20] },
+    { "name": "train_size", "type": "fixed", "domain": -1 },
+    { "name": "b_lmc", "type": "fixed", "domain": False },
+    { "name": "b_csc", "type": "fixed", "domain": False },
+    { "name": "b_acd", "type": "fixed", "domain": True },
+    { "name": "b_ss_mean", "type": "categorical", "domain": [False, True] },
+    { "name": "b_ss_scale", "type": "categorical", "domain": [False, True] },
+    {
+      "name": "threshold",
+      "type": "continuous",
+      "domain": [0.000001, 0.00001],
+    },
+    { "name": "area", "type": "continuous", "domain": [1.0, 2000.0] },
+  ]
+LPD:
+  [
+    { "name": "alg", "type": "fixed", "domain": "LocalPatternDetector" },
+    {
+      "name": "license_path",
+      "type": "fixed",
+      "domain": "license/node-locked.lic",
+    },
+    { "name": "patch_size_height", "type": "discrete", "domain": [16, 32] },
+    { "name": "patch_size_width", "type": "discrete", "domain": [16, 32] },
+    { "name": "extraction_step_height", "type": "discrete", "domain": [8, 16] },
+    { "name": "extraction_step_width", "type": "discrete", "domain": [8, 16] },
+    { "name": "n_bins", "type": "discrete", "domain": [2, 20] },
+    { "name": "radius", "type": "discrete", "domain": [1, 10] },
+    { "name": "diameter", "type": "discrete", "domain": [1, 15] },
+    { "name": "sigmaColor", "type": "discrete", "domain": [10, 150] },
+    { "name": "sigmaSpace", "type": "discrete", "domain": [10, 150] },
+    { "name": "b_lmc", "type": "fixed", "domain": False },
+    { "name": "b_fha", "type": "fixed", "domain": True },
+    { "name": "threshold", "type": "continuous", "domain": [0.0001, 1.0] },
+    { "name": "area", "type": "continuous", "domain": [1.0, 2000.0] },
+    { "name": "combine_method", "type": "fixed", "domain": "submaxmul"},
+    { "name": "combine_weights", "type": "fixed", "domain": [0.0, 0.0]},
+    { "name": "combine_gamma", "type": "fixed", "domain": 2.0},
+    { "name": "smooth_method", "type": "fixed", "domain": "bi"},
+    { "name": "smooth_gamma", "type": "fixed", "domain": 0.5},
+    { "name": "partial_method", "type": "fixed", "domain": "naive"},
+    { "name": "partial_weights", "type": "fixed", "domain": [0.0, 0.0, 0.0, 0.0, 0.0]}
+  ]
+PSD:
+  [
+    { "name": "alg", "type": "fixed", "domain": "PatchSampleDetector" },
+    {
+      "name": "license_path",
+      "type": "fixed",
+      "domain": "license/node-locked.lic",
+    },
+    {
+      "name": "onnx",
+      "type": "fixed",
+      "domain": "distfiles/wide_resnet50_2.onnx",
+    },
+    { "name": "n_features", "type": "discrete", "domain": [112, 400] },
+    { "name": "ridge", "type": "continuous", "domain": [0.01, 1.0] },
+    { "name": "r_growth", "type": "fixed", "domain": 0.05 },
+    { "name": "b_soe", "type": "categorical", "domain": [False, True] },
+    { "name": "b_aer", "type": "categorical", "domain": [False, True] },
+    { "name": "threshold", "type": "continuous", "domain": [0.1, 0.6] },
+    { "name": "area", "type": "continuous", "domain": [1.0, 200.0] },
+  ]
